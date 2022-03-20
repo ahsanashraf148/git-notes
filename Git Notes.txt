@@ -1,0 +1,210 @@
+.git is a hidden folder in the repository, it has all the history of the editing .
+
+pwd ->tells the name of current folder
+ls -> lists the name of files present in the folder
+cd <name of folder>/ -> change the directory
+--------------------------------------------------------
+
+git config --global user.name ->edits the user name
+Similar to email etc
+
+git config --list -> lists all the name and email etc
+git config user.name -> tells the name
+Similar for email  etc
+
+
+-----------------------------------------------------
+
+git status -> tells the status of the repository
+git init -> initialize the folder as repository
+git add <name> ->adds the <name>file for tracking
+git add --a -> adds all the file for tracking
+git commit -m "Message(the cahnge which is done(useful message))" ->commits the files for snapshot
+----------------------------------------------------------
+
+rm -rf .git -> deletes the repository (not the files in the computer)
+----------------------------------------------------------
+
+git clone <link to copy> <new name>  -> clones the already exixting repository
+------------------------------------------------------------
+
+git log -> tells the history of all the editing
+---------------------------------------------------
+
+touch <name of file> generates a new file
+---------------------------------------------
+.gitignore is text file in which the name of file or folder which is to be ignored will be written. It means if we make changes to the file it will not be required to commit or add. (to choose all files of same type to be ignored we can write as *.<filetype>  and to choose folder we can write as <folder name>/ )
+------------------------------------------------------------
+
+git diff ->compares the staging area with working directory(tells what changes has been made in the file which was commited before and the modified file)
+
+git diff --staged ->compares the previous commit with the staging area(tells the difference between the files before in the previous commit and  staging area)
+-----------------------------------------------------------
+git commit -a -m "<commit message>" ->only add and commits the already tracked file means it will be staged and committed with this command only if the file is modified.(New file will not be added and commited with this command)
+---------------------------------------------------------------
+
+git rm <file name> ->removes the file and stage it as well
+
+git mv <file name which is to be renamed> <new name> ->renames the file and stage it as well
+
+after rm and mv files will need to be commited
+
+git rm --cached <file name> ->removes the file from tracking if it is put in .gitignore. If a file is in staging and then put in .gitignore the if the file is modified it will still be in repository. To remove it, this command is used.
+-----------------------------------------------------------
+
+git log -> tells the history of all commits
+
+git log -p ->tells the detail means the change in the commit
+
+git log -p -<n> -> tells the n number of commits with detail
+
+git log --stat ->tells the change of the commit with stats type of a summary
+(number of insertion, deletion etc)
+
+git log --pretty=oneline ->tells all the commit in one line
+
+git log --pretty=short ->tells the commit number, author and message
+
+git log --pretty=full ->tells the commit number, author, commit (person name), message
+
+git log --since=n.days/months.years ->tells the commit of n number of days or months or years
+
+git log --pretty=format:"%h -- %an" ->tells the commit in the fiven format in this case %h is the commit number -- %an is author name. %ae can be used for author email etc
+
+for more git logs git scm website documents can be accessed
+-------------------------------------------
+
+git commit --amend -> amends the already present commit which is selected by us 
+
+----------------
+
+git checkout -- <file name> ->converts the modified file to the previous commit
+
+git checkout -f ->converts all the files to the previous commit
+------------------------------
+
+TO PUSH AN EXISTING REPOSITORY TO GITHUB:
+
+git remote add origin(url name) url(url of the repository)
+--------------------------
+
+TO ADD THE SSH Key:(STEPS)
+
+ssh-keygen -t rsa -b 4096 -C "ahsanashraf148@gmail.com"
+
+eval $(ssh-agent -s)
+
+ssh-add ~/.ssh/id_rsa
+
+tail ~/.ssh/id_rsa.pub
+
+After following above steps a key will be given by git bash copy it and then add this in the github account SSH Key in settings.
+---------------------------------------------------
+
+TO CHECK IF IT IS A GITHUB REPOSITIRY:
+
+git remote =>lists the name of github url
+
+git remote -v =>gives url name along with link of push and fetch
+
+----------------------------------------------------------------
+
+TO PUSH THE REPOSITORY:
+
+git push -u origin master
+
+git push origin <branch name>
+
+where origin is url name and master is the branch name 
+-----------------------------------
+
+TO DELETE A BRANCH IN GITHUB:
+
+git push -d origin(url name) <branch name>
+
+-------------------------------------------------------------
+
+TO UNSTAGE A FILE:
+
+git restore --staged <file name>
+
+----------------------------------------------
+
+GIT ALIASES:
+
+
+git config --global alias.<new name> <command>
+
+Example:
+git config --global alias.st status
+
+git config --global alias.unstage 'restore --staged --'
+
+git config --global alias.last 'log -p -1'
+
+----------------------------------------------------------
+
+git branch =>lists the names of branches of the repository
+
+git branch -v -> tells the commit list and commit messag along with branch names
+
+git branch --merged =>shows already merged branches
+
+git branch --no-merged =>shows not merged branches
+
+TO CHANGE 
+
+git checkout -b <branch name> =>makes a new branch
+
+git checkout <branch name> =>shifts to the given branch
+------------------------------------------------------------
+
+git merge <branch name> =>merges the branch with the master 
+
+-------------------------------------------------------------
+DELETING BRANCHES:
+
+git branch -d <branch name> =>deletes the merged branch, but gives error if branch is not merged
+
+git branch -D <branch name> => deletes without checking whether branch is merged or not
+---------------------------------------------------------------
+
+
+q is used to get out of linux editor or log etc
+
+--------------------------------------------------------------
+
+TO PULL A REPOSITORY:
+
+git pull origin main
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
