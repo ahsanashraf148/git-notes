@@ -24,8 +24,13 @@ git commit -m "Message(the cahnge which is done(useful message))" ->commits the 
 
 rm -rf .git -> deletes the repository (not the files in the computer)
 ----------------------------------------------------------
+TO CLONE A REPOSITORY FROM GITHUB OR TO PULL A REPOSITORY FROM GITHUB:
 
 git clone <link to copy> <new name>  -> clones the already exixting repository
+
+TO CLONE A REPOSITORY FROM GITHUB OR TO PULL A REPOSITORY FROM GITHUB WITHOUT MAKING YOUR FOLDER A REPOSITORY:
+
+git clone <link to copy> <new name>   -> clones the repository without making the folder repository
 ------------------------------------------------------------
 
 git log -> tells the history of all the editing
